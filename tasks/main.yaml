@@ -1,5 +1,4 @@
 - name: Update all packages to the latest version
-  connection: ssh
   apt:
     upgrade: dist
      # 86400 seconds = 24 hours
