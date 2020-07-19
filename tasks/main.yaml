@@ -33,7 +33,7 @@
     - restart crond
   tags: [timezone, configuration]
 
-- name: Add gogs keys to Ansible user known_hosts
+- name: Add gitea keys to Ansible user known_hosts
   known_hosts:
     name: "[git.megaphonetech.com]:10022"
     key: "{{ inner_item }}"
