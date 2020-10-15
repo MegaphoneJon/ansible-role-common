@@ -4,6 +4,20 @@
      # 86400 seconds = 24 hours
     cache_valid_time: 86400
 
+- name: Install common packages
+  apt:
+    name: ['acl', 'aptitude', 'apt-show-versions', 'bzip2', 'cron-apt', 'debconf-utils', 'fail2ban', 'git', 'htop', 'iotop', 'iptables-persistent', 'mtr-tiny', 'ncdu', 'nmap', 'ntp', 'python3-dbus', 'screen', 'sudo', 'sysstat', 'tree', 'unzip', 'vim', 'zip', 'zsh', 'silversearcher-ag']
+    state: present
+    # 86400 seconds = 24 hours
+    cache_valid_time: 86400
+
+- name: default to Python3
+  community.general.alternatives:
+    name: python
+    link: /usr/bin/python
+    path: /usr/bin/python3
+    priority: 1
+
 - name: Configure the hosts file
   lineinfile:
     path: /etc/hosts
@@ -15,13 +29,6 @@
   hostname:
     name: "{{ hostname }}"
   tags: [hostname, configuration]
-
-- name: Install common packages
-  apt:
-    name: ['acl', 'aptitude', 'apt-show-versions', 'bzip2', 'cron-apt', 'debconf-utils', 'fail2ban', 'git', 'htop', 'iotop', 'iptables-persistent', 'mtr-tiny', 'ncdu', 'nmap', 'ntp', 'screen', 'sudo', 'sysstat', 'tree', 'unzip', 'vim', 'zip', 'zsh', 'silversearcher-ag']
-    state: present
-    # 86400 seconds = 24 hours
-    cache_valid_time: 86400
    
   tags: [packages, configuration]
   when: ansible_os_family =="Debian"
