@@ -6,7 +6,7 @@
 
 - name: Install common packages
   apt:
-    name: ['acl', 'aptitude', 'apt-show-versions', 'bzip2', 'cron-apt', 'debconf-utils', 'fail2ban', 'git', 'htop', 'iotop', 'iptables-persistent', 'mtr-tiny', 'ncdu', 'nmap', 'ntp', 'python3-dbus', 'screen', 'sudo', 'sysstat', 'tree', 'unzip', 'vim', 'zip', 'zsh', 'silversearcher-ag', 'colordiff']
+    name: ['acl', 'aptitude', 'apt-show-versions', 'bzip2', 'cron-apt', 'debconf-utils', 'fail2ban', 'git', 'htop', 'iotop', 'iptables-persistent', 'mtr-tiny', 'ncdu', 'nmap', 'python3-dbus', 'screen', 'sudo', 'sysstat', 'tree', 'unzip', 'vim', 'zip', 'zsh', 'silversearcher-ag', 'colordiff']
     state: present
     # 86400 seconds = 24 hours
     cache_valid_time: 86400
