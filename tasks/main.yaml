@@ -10,6 +10,8 @@
     state: present
     # 86400 seconds = 24 hours
     cache_valid_time: 86400
+  tags: [packages, configuration]
+  when: ansible_os_family =="Debian"
 
 - name: default to Python3
   community.general.alternatives:
@@ -29,9 +31,6 @@
   hostname:
     name: "{{ hostname }}"
   tags: [hostname, configuration]
-   
-  tags: [packages, configuration]
-  when: ansible_os_family =="Debian"
 
 - name: Set timezone
   timezone:
