@@ -33,7 +33,7 @@
     line: "127.0.1.1 {{ fqdn }} {{ hostname }}"
   tags: [hostname, configuration]
 
-# FIXME: This failed on my last Koumbit install, maybe they control this?  Seems weird because root access.
+# FIXME: This failed on my last Koumbit install, maybe they control this?  Seems weird because root access. ALSO: Failed on Greenhost
 - name: Set hostname
   hostname:
     name: "{{ hostname }}"
